@@ -1,0 +1,128 @@
+@charset utf8;
+
+/* -- DEFAULT --  */ 
+
+*{margin: 0;padding:0;}
+a{text-decoration:none;}
+ul{list-style: none;}
+
+header{
+    position: fixed;
+    width:100%;
+    height:85px;
+    z-index: 999;
+}
+
+.brand{
+    float:left;
+    width:120px;
+    height:70px;
+    background: url('../images/identidadeVisualTransparent.png')center center/65px no-repeat;
+}
+
+section{
+    position:absolute;
+    float:left;
+    top:0;
+    width:100%;
+    height:530px;
+}
+
+figure.images{
+    position:absolute;
+    display:none;
+    width:100%;
+    height:290px;
+    margin:0 auto;
+    background-color: darkgray;
+}
+
+
+img{
+    float:left;
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+button{
+    position:absolute;
+    display: inherit;
+    width:40px;
+    height:35px;
+    top:25%;
+    cursor:pointer;
+    border-radius:4px;
+    color:white;
+    background-color: transparent;
+    border:none;
+    outline: none;
+}
+
+button#previous{
+    float:left;
+    left:2%;
+}
+button#next{
+    float:right;
+    right:2%;
+}
+
+button:hover{
+    background-color: rgb(0, 0,0,0.3);
+}
+
+
+nav{
+    position:absolute;
+    float:left;
+    top:240px; /*620*/
+    width:100%;
+    height:6%;
+}
+.links{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.7);
+    cursor:pointer;
+    margin: 10px auto;
+}
+.links:nth-child(1){
+    margin-left:45%;
+}
+.active{
+    background:rgba(215, 231, 81, 0.9);
+}
+
+@media (min-width:590px){
+    .brand{
+        height:85px;
+        background: url('../images/identidadeVisualTransparent.png')center center/85px no-repeat;
+    }
+    figure.images{
+        height:420px;
+    }
+    button{
+        top:35%;
+    }
+    nav{
+        top:370px;
+    }
+}
+
+
+@media (min-width:1024px){
+    figure.images{
+        height:595px;
+    }
+    button{
+        top:55%;
+    }
+    nav{
+        top:520px;
+    }
+
+}
+
