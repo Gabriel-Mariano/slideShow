@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="shortcut icon" type="imagem/png" href="./images/favicon.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/cascate.css">
+        <title>Slide Show</title>   
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Gabriel Mariano">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+    </head>
+    <body onload="carregar()">
+        <!-- Document -->
+        <header>
+            <figure class="brand"></figure>
+        </header>
+        <section>
+           <figure class="images">
+                <img src="images/img04.jpg"/>
+           </figure> 
+           <figure class="images">  
+                <img src="images/img05.jpg"/>
+            </figure>  
+            <figure class="images">     
+                <img src="images/img06.jpg"/>
+           </figure>
+           <!-- Ancoras -->
+           <button id="previous" onclick="prev()"><i class="material-icons" style="font-size:36px;">chevron_left</i></button>
+           <button id="next" onclick="next()"><i class="material-icons" style="font-size:36px">chevron_right</i></button>
+                <nav>
+                    <div class="links" onclick="ancora(this)" id="0"></div>
+                    <div class="links" onclick="ancora(this)" id="1"></div>
+                    <div class="links" onclick="ancora(this)" id="2"></div>
+                </nav>
+        </section>
+    </body>
+    <script type="text/javascript">
+        var slideIndex = 0;
+        var pictures = document.getElementsByClassName("images");
+        var links = document.getElementsByClassName("links");
+   
+           
+
+        
+           function carregar(){
+                links[0].style.background = "rgba(215, 231, 81, 0.9)";
+                tmp = setInterval(slideAuto,4000);
+                pictures[slideIndex].style.display = "inherit";
+           } 
+           
+           
+
+        function ancora(isto){
+            links[slideIndex].style.background = "rgba(255,255,255,0.7)";
+            pictures[slideIndex].style.display = "none";
+            slideIndex = isto.id;
+            pictures[slideIndex].style.display = "inherit";
+			links[slideIndex].style.background = "rgba(215, 231, 81, 0.9)";
+		}  
+
+
+        function next(){
+            pictures[slideIndex].style.display = "none";
+            links[slideIndex].style.background = "rgba(255,255,255,0.7)";
+            slideIndex++;
+                if(slideIndex >2){
+                    slideIndex = 0;
+                }
+            links[slideIndex].style.background = "rgba(215, 231, 81, 0.9)";    
+            pictures[slideIndex].style.display = "inherit";
+        }
+        function prev(){
+            pictures[slideIndex].style.display = "none";
+            links[slideIndex].style.background = "rgba(255,255,255,0.7)";
+            slideIndex--;
+                if(slideIndex < 0){
+                    slideIndex = 2;
+                }
+           links[slideIndex].style.background = "rgba(215, 231, 81, 0.9)";     
+           pictures[slideIndex].style.display = "inherit";
+        }
+
+        function slideAuto(){
+            console.log(slideIndex);
+            pictures[slideIndex].style.display = "none";
+            links[slideIndex].style.background = "rgba(255,255,255,0.7)";
+            slideIndex++;
+            if(slideIndex >2){
+                slideIndex = 0;
+            }
+            pictures[slideIndex].style.display = "inherit";
+            links[slideIndex].style.background = "rgba(215, 231, 81, 0.9)";
+            console.log(slideIndex);
+        }
+
+        
+
+    </script>
+</html>
